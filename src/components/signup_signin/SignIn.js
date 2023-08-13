@@ -1,11 +1,19 @@
 import React, {useState} from "react"
-import './signup.css';
+// import './signup.css';
+import './signin.css';
 import { NavLink } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
-
+import MailOutlineIcon from '@mui/icons-material/MailOutline';
+import LockOpenIcon from '@mui/icons-material/LockOpen';
+import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import GoogleIcon from '@mui/icons-material/Google';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import { useNavigate } from "react-router-dom";
 
 const SignIn = () => {
 
+    const navigate = useNavigate();
     const [logdata, setData] = useState({
         email: "",
         password: ""
@@ -50,42 +58,103 @@ const SignIn = () => {
             setData({...logdata, email:"", password:""})
             localStorage.setItem('email', email);
             localStorage.setItem('fname', userlogin.fname);
+            navigate('/')
 
         }
     }
 
     return (
         <>
-            <section>
-                <div className="sign_container">
-                    <div className="">
-                        <img width="150px" style={{marginTop:"25px", marginBottom:"80px"}} src="./AsmiBoutique.png" alt="amazonlogo" />
-                    </div>
-                    <div className="sign_form">
+            <div className="forny-container">
+                <div className="forny-inner">
+                    <div className="forny-form">
+                        <div className="mb-8 text-center forny-logo">
+                            <img width="150px" style={{ marginBottom: "25px" }} src="./AsmiBoutique.png" alt="amazonlogo" />
+                        </div>
+                        <div className="text-center">
+                            <h4 className="login-title">Sign-In</h4>
+                            <p class="mb-10">Use your credentials to access your account.</p>
+                        </div>
                         <form method="POST">
-                            <h1>Sign-In</h1>
-                            <div className="form_data">
-                                <label htmlFor="email">Email</label>
-                                <input type="text" name="email" id="email"
-                                    onChange={adddata} 
-                                    value={logdata.email}/>
+                            <div className="form-group">
+                                <div className="input-group">
+                                    <div className="input-group-prepend">
+                                        <span className="input-group-text">
+                                            <MailOutlineIcon id="icon" />
+
+                                        </span>
+                                    </div>
+                                    <input type="text" name="email" id="email" className="form-control"
+                                        onChange={adddata}
+                                        value={logdata.email} placeholder="Email Address" />
+
+                                </div>
                             </div>
-                            <div className="form_data">
-                                <label htmlFor="password"
-                                    onChange={adddata}>Password</label>
-                                <input type="password" name="password" id="password" placeholder="At least 6 Char"
-                                value={logdata.password} onChange={adddata}/>
+                            <div className="form-group password-field">
+                                <div className="input-group">
+                                    <div className="input-group-prepend">
+                                        <span className="input-group-text">
+                                            <LockOpenIcon id="icon" />
+
+                                        </span>
+                                    </div>
+
+                                    <input type="password" name="password" className="form-control" id="password" placeholder="At least 6 Char Password"
+                                        value={logdata.password} onChange={adddata} />
+
+
+                                    <div className="input-group-append cursor-pointer">
+                                        <span className="input-group-text">
+                                            <RemoveRedEyeIcon id="icon" />
+                                        </span>
+                                    </div>
+                                </div>
                             </div>
-                            <button className="signin_btn" onClick={senddata}>Continue</button>
+                            <div className="row mt-6 mb-6">
+                                <div className="col-6 d-flex align-items-center">
+                                    <div className="custom-control custom-checkbox">
+                                        <input type="checkbox" className="custom-control-input" id="cb1" />
+                                        <label className="custom-control-label" for="cb1">Remember me
+                                        </label>
+                                    </div>
+                                </div>
+                                <div className="col-6 text-right">
+                                    <a href="03_reset.html">Forgot password?</a>
+                                </div>
+                            </div>
+                            <div>
+                                <button className="btn btn-primary btn-block" onClick={senddata}>Continue</button>
+                            </div>
+                            <div className="mt-10 mb-6 text-center">
+                                <span>or login with</span>
+                            </div>
+                            <div className="text-center">
+                                <div className="d-inline-block mr-1">
+                                    <button className="btn btn-icon btn-flat text-facebook soi-icon" >
+                                        <FacebookIcon id="icon" />
+                                    </button>
+                                </div>
+                                <div className="d-inline-block mr-1">
+                                    <button className="btn btn-icon btn-flat text-google soi-icon">
+                                        <GoogleIcon id="icon" />
+                                    </button>
+                                </div>
+                                <div className="d-inline-block">
+                                    <button className="btn btn-icon btn-flat text-twitter soi-icon">
+                                        <TwitterIcon id="icon" />
+                                    </button>
+                                </div>
+                            </div>
+                            <div className="text-center mt-10">
+                                Don't have an account?
+                                <NavLink to="/register"> Create Your Account  </NavLink>
+
+                            </div>
+                            <ToastContainer />
                         </form>
-                        <ToastContainer/>
-                    </div>
-                    <div className="create_accountinfo">
-                        <p>New To Amazon</p>
-                        <NavLink to="/register"><button>Create Your Account</button> </NavLink>
                     </div>
                 </div>
-            </section>
+            </div>
         </>
     )
 }

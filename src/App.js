@@ -9,6 +9,8 @@ import SignUp from './components/signup_signin/SignUp';
 import Cart from './components/cart/Cart';
 import Buynow from './components/buynow/Buynow';
 import {Routes,Route } from "react-router-dom";
+import AddressList from './components/address/AddressList';
+import AddAddress from './components/address/AddAddress';
 
 function App() {
   return (
@@ -23,7 +25,9 @@ function App() {
           <Route path="/register" element={<SignUp />} />
           <Route path="/getproductsone/:id" element={<Cart />} />
           <Route path="/buynow" element={<Buynow />} />
-       
+          <Route path="/addreslist" element={<AddressList />} />
+          <Route path="/addresses" element={<AddAddress />} />
+
           </Routes>
         </React.Fragment>
        

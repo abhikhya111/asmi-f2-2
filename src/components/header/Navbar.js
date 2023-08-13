@@ -44,7 +44,6 @@ export default function Navbar() {
   useEffect(() => {
     dispatch(getProducts());
   }, [dispatch])
-  console.log("Prod", products.data);
   const handelopen = () => {
     setDropen(true);
   }

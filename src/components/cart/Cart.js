@@ -127,7 +127,7 @@ const Cart = () => {
 
                 <br></br>
                 <br></br>
-                <h5>Select Auantity</h5>
+                <h5>Select Quantity</h5>
                 <div className="qty">
                     <Form.Select onChange={(e) => selectedQuantityChange(e)}>
                             <option value="1">1</option>

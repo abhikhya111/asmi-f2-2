@@ -1,14 +1,16 @@
-header{
-    background-color: #131921;
-    width:100%;
-    height: 60px;
+
+header {
+    background-color: #161b21;
+    width: 100%;
+    height: 90px;
     position: fixed;
     top: 0;
-    z-index:2;
-    width: 100%;
+    z-index: 99;
+    font-family: 'Lato', sans-serif;
+    box-shadow: 0 0 5px rgb(0 0 0 / 50%);
 }
 
-header nav{
+header nav {
     width: 100%;
     margin: auto;
     height: 100%;
@@ -17,51 +19,83 @@ header nav{
     align-items: center;
     z-index: 4;
 }
-
-header nav .navlogo img{
+header nav i {
+    color: #fff;
+    margin-right: 10px;
+    font-size: 22px;
+}
+header nav li {
+    list-style: none;
+}
+header nav .dropdown-toggle::after {
+    font-family: bootstrap-icons !important;
+    content: "\f282";
+    font-size: 14px;
+    border: 0;
+    vertical-align: middle;
+}
+.navlogo a {
+    text-decoration: none;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+a:hover, a:focus, a:active {
+    color: inherit;
+    text-decoration: none;
+}
+/* header nav .navlogo img{
     width: 110px;
     margin-top: 10px;
-}
+} */
 
 header nav .left{
     display: flex;
     justify-content:space-around;
     align-items: center;
-    /* border: 2px solid red; */
     flex: .7;
 }
 
 
 
-header nav .left input{
-    width:400px;
-    height: 38px;
+header nav .left input {
+    width: 350px;
+    height: 40px;
     border: none;
     outline: none;
-    border-bottom-left-radius: 3px;
-    border-top-left-radius: 3px;
     font-size: 14px;
     padding-left: 10px;
+    background-color: transparent;
 }
 
-header nav .left .search_icon{
-    background-color: #febd69;
-    height: 38px;
-    width: 40px;
+header nav .left .search_icon {
+    background-color: #f4a950;
+    height: 40px;
+    width: 42px;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-bottom-right-radius: 3px;
-    border-top-right-radius: 3px;
     cursor: pointer;
+    color: #fff;
+    border-radius: 4px 0 0 4px;
 }
 
 header nav .nav_searchbaar{
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #fff;
+    border-radius: 4px;
+}
+.dropdown-menu:li {
+    text-align: left;
 }
 
+.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0; 
+ }
 /* header nav .left input:focus{
     border: 2px solid #febd69;
 } */
@@ -70,41 +104,21 @@ header nav .right{
     display: flex;
     justify-content:center;
     align-items: center;
-    /* border: 2px solid red; */
     flex: .3;
 }
 
-header nav .right .nav_btn a{
+header nav .right .nav_btn a {
     color: #fff;
-    font-weight: 500;
     text-decoration: none;
-    margin-right: 2px;
-    border: 1px solid #131921;
-    border-radius: 2px;
-    padding: 8px;
+    padding: 0 8px;
 }
 
-
-
-header nav .right .nav_btn a:hover{
-    border: 1px solid white;
-}
-
-header nav .right .cart_btn{
+header nav .right .cart_btn {
     display: flex;
-    margin-left: 22px;
-    cursor: pointer;
-    margin-top: 2px;
-    padding: 8px;
-    border-radius: 2px;
-    border: 1px solid #131921;
+    padding: 0 8px;
     align-items: center;
     justify-content: space-between;
-    margin-right: 3px;
-}
-
-header nav .right .cart_btn:hover{
-    border: 1px solid white;
+    margin: 0 16px;
 }
 
 header nav .right .cart_btn #icon{
@@ -123,8 +137,24 @@ header nav .right .cart_btn p{
 
 .right a{
     text-decoration: none;
+    color: #fff;
 }
-
+.header-logo {
+    color: #f4a950;
+    font-size: 30px;
+    font-weight: 700;
+    margin: 0;
+    font-family: 'Dancing Script', cursive;
+}
+.header-text-white {
+    color: #fff;
+}
+.css-106c1u2-MuiBadge-badge {
+    background-color: #f4a950 !important;
+}
+.css-2s90m6-MuiAvatar-root {
+    background-color: #f4a950 !important;
+}
 header nav .avtar{
     cursor: pointer;
 }
@@ -153,10 +183,58 @@ header .extrasearch a{
 /* drawer sty */
 header nav .drawer{
     width: 250px;
-    background-color: red;
 }
 
-
+header nav .navbar-links {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+  }
+  header nav .navbar-links li a {
+    display: block;
+    transition: 0.4s all;
+}
+  
+  header nav .navbar-links li.navbar-dropdown {
+    position: relative;
+  }
+  
+  header nav .navbar-links li.navbar-dropdown:hover .dropdown {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  
+  header nav .navbar-links li.navbar-dropdown .dropdown {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    padding: 10px 6px;
+    top: 120%;
+    transform: translateY(50px);
+    left: 8%;
+    width: 180px;
+    background-color: #fff;
+    box-shadow: 0px 10px 10px 3px rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    z-index: 111;
+    transition: 0.4s all;
+  }
+  header nav .navbar-links li.navbar-dropdown .dropdown a {
+    padding: 6px;
+    color: #161b21;
+    font-size: 14px;
+}
+header nav .navbar-links li.navbar-dropdown .dropdown a:hover {
+    padding-left: 30px;
+  }
+  header nav .navbar-links li.navbar-dropdown .dropdown a:hover {
+    color: #f4a950;
+  }
+  i.bi.bi-chevron-down {
+    margin: 0 6px;
+    font-size: 14px;
+}
 @media (max-width:800px){
     header .hamburgur{
         display: block;
@@ -164,11 +242,7 @@ header nav .drawer{
     header nav{
         overflow: hidden;
     }
-    header nav .right .nav_btn,
-    header nav .right .avtar2,
-    header nav .right .avtar{
-        display:none;
-    }
+    
     header nav .left input{
         width: 150px;
         margin-left: 10px;
@@ -186,20 +260,40 @@ header nav .drawer{
 }
 
 @media (max-width:568px){
-
-    header nav .left input{
-       display: none;
+    header nav .navlogo img{
+        width: 100px;
     }
-    
-    header nav .left .search_icon{
-        /* color: #fff;
-        font-size: 18px;
-        background-color: #131921; */
+    header nav .left input {
+        width: 80px;
+        margin-left: 10px;
+        height: 30px;
+    }
+    header nav .left .search_icon {
+        height: 30px;
+        width: 30px;
+    }
+
+    .new_nav {
+        display: block;
+        padding: 6px 0;
+    }
+    .new_nav .nav_data .left_data li a {
+        font-size: 9px;
+    }
+    .mobile-none {
         display: none;
     }
-    header nav .navlogo img{
-        width: 95px;
-        margin-top: 14px;
-        margin-left: 67px;
+    header nav i {
+        margin-right: 5px;
+        font-size: 16px;
+    }
+    i.bi.bi-chevron-down {
+        margin: 0 3px;
+        font-size: 8px;
+    }
+
+    header nav .navbar-links li.navbar-dropdown .dropdown {
+        left: 0;
+        width: 70px;
     }
 }

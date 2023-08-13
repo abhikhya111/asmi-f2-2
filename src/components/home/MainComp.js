@@ -30,27 +30,34 @@ const Maincomp = () => {
 
     return (
         <>
+         <div className="container">
+        <div className="row">
+        <div className="col-lg-12">
             <div className="home_section">
+           
                 <div className="banner_part">
                 <div className="center_img">
-                    <img src="./banner01.jpeg" alt="" />
-                </div>                </div>
-                
+                    <img src="./banner01.jpg" className="img-fluid" alt="" />
+                </div> 
+                </div>
+                </div>
 
                 <Slide title="Today's Deal" products={productsList} />
 
                 <div className="center_img">
-                    <img src="./banner03.jpeg" alt="" />
+                    <img src="./bnr.jpg" alt="" />
                 </div>
 
                 <Slide title="Best Seller" products={productsList} />
                 <div className="center_img">
-                    <img src="./banner02.jpeg" alt="" />
+                    <img src="./bnr2.jpg" alt="" />
                 </div>
                 
                 <Slide title="Upto 80% off" products={productsList} />
+            
             </div>
-
+            </div>
+            </div>
             <Divider />
 
         </>

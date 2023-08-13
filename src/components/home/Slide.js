@@ -25,6 +25,7 @@ const Slide = ({ title, products }) => {
 
     console.log("Slice" ,products)
     return (
+        
         <div className="products_section">
             <div className="products_deal">
                 <h3>{title}</h3>
@@ -39,28 +40,30 @@ const Slide = ({ title, products }) => {
                 infinite={true}
                 draggable={false}
                 swipeable={true}
-                centerMode={true}
+                centerMode={false}
                 autoPlay={true}
                 autoPlaySpeed={4000}
                 keyBoardControl={true}
                 showDots={false}
                 removeArrowOnDeviceType={["tablet", "mobile"]}
                 dotListClass="custom-dot-list-style"
-                itemClass="carousel-item-padding-40-px"
+                itemClass="carousel-item-padding-20-px"
                 containerClass="carousel-container"
             >
                 {
                     products.map((e) => {
                         return (
                             <NavLink to={`/getproductsone/${e.productId}`}>
-                                <div className="products_items" style={{border: "1px solid #E0E0E0", margin: "10px" , width: "300px"}}>
+                                <div className="products_items">
                                    
                                     <div className="center_img">
-                                        <img src="./Kurta01.jpeg" alt="" />
+                                        <img src="./pdt-img.png" alt="" />
                                     </div>
-                                    <p style={{textAlign:"left"}}className="products_name"><b>{e?.productName}</b></p>
-                                    <p className="products_offer" style={{ color: "#606471" }}>{e?.titleDescription}</p>
+                                    <div className='pdt-details-category'>
+                                    <p className="products_name">{e?.productName}</p>
+                                    <p className="products_offer">{e?.titleDescription}</p>
                                     <p className="products_explore">{e?.mrp}</p>
+                                    </div>
                                 </div>
                             </NavLink>
                         )
@@ -72,6 +75,7 @@ const Slide = ({ title, products }) => {
         }
         
         </div>
+       
     )
 }
 

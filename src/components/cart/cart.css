@@ -24,7 +24,7 @@
     opacity: 0.3;
 }
 
-.sizes{
+.sizes, .qty{
     display: flex;
     width: 15%;
     

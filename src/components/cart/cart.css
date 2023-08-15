@@ -30,6 +30,10 @@
     
 }
 
+.selectedColor{
+    border: 4px solid #dadadd
+}
+
 .size-item{
     /* border-radius: 20px; */
     display: flex;
